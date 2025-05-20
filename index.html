@@ -1,0 +1,79 @@
+<!-- HTML5 Document Type Declaration -->
+<!DOCTYPE html>
+<!-- Root HTML element with English language setting -->
+<html lang="en">
+<head>
+  <!-- Character encoding for the document -->
+  <meta charset="UTF-8">
+  <!-- Page title shown in browser tab -->
+  <title>Simple Storage DApp</title>
+  <!-- Internal CSS styling -->
+  <style>
+    /* Main body styling */
+    body {
+      font-family: Arial, sans-serif; /* Sets the font family */
+      max-width: 800px; /* Maximum width of the content */
+      margin: 0 auto; /* Centers the content horizontally */
+      padding: 20px; /* Adds space around the content */
+    }
+    /* Styling for input fields and buttons */
+    input, button {
+      padding: 8px; /* Adds space inside elements */
+      margin: 5px; /* Adds space between elements */
+    }
+    /* Button specific styling */
+    button {
+      background-color: #4CAF50; /* Green background color */
+      color: white; /* White text color */
+      border: none; /* Removes default border */
+      cursor: pointer; /* Shows pointer cursor on hover */
+    }
+    /* Button hover effect */
+    button:hover {
+      background-color: #45a049; /* Darker green on hover */
+    }
+    /* Wallet connection status */
+    #walletStatus {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .connected {
+      background-color: #dff0d8;
+      color: #3c763d;
+    }
+    .disconnected {
+      background-color: #f2dede;
+      color: #a94442;
+    }
+  </style>
+</head>
+<body>
+  <!-- Main heading of the application -->
+  <h1>Simple Storage DApp</h1>
+
+  <!-- Wallet Connection Section -->
+  <div id="walletStatus" class="disconnected">Wallet Status: Not Connected</div>
+  <button id="connectWallet">Connect Wallet</button>
+
+  <hr>
+
+  <!-- Input section for setting a new number -->
+  <input type="number" id="numberInput" placeholder="Enter number">
+  <!-- Button to store the number on blockchain -->
+  <button onclick="setNumber()">Set Number</button>
+
+  <!-- Spacing between sections -->
+  <br><br>
+  <!-- Button to retrieve the stored number -->
+  <button onclick="getNumber()">Get Stored Number</button>
+  <!-- Display area for the retrieved number -->
+  <p id="result">Stored number: </p>
+
+  <!-- External JavaScript Libraries -->
+  <!-- Web3.js library for blockchain interaction -->
+  <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+  <!-- Custom JavaScript file for DApp functionality -->
+  <script src="script.js"></script>
+</body>
+</html> 
