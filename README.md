@@ -2,128 +2,58 @@
 
 A decentralized application that demonstrates the interaction between a frontend web application and an Ethereum smart contract using Web3.js and MetaMask.
 
-## 📋 Project Structure
+[![License](https://img.shields.io/github/license/Bannysukumar/simple-storage-dapp)](https://github.com/Bannysukumar/simple-storage-dapp/blob/main/LICENSE) [![Stars](https://img.shields.io/github/stars/Bannysukumar/simple-storage-dapp)](https://github.com/Bannysukumar/simple-storage-dapp/stargazers) [![Last commit](https://img.shields.io/github/last-commit/Bannysukumar/simple-storage-dapp)](https://github.com/Bannysukumar/simple-storage-dapp/commits/main)
 
-```
+## Overview
+
+A decentralized application that demonstrates the interaction between a frontend web application and an Ethereum smart contract using Web3.js and MetaMask.
+
+
+What is actually in the repository: `contracts/SimpleStorage.sol`, `contracts/`. GitHub reports the primary language as JavaScript.
+
+## Features
+
+
+- SimpleStorage contract with setNumber, getNumber
+
+## Tech Stack
+
+| Technology | Where it shows up |
+|---|---|
+| Solidity | Smart contracts |
+
+## Project Architecture
+
+Browser page → Solidity contract. The HTML references MetaMask.
+
+## Project Structure
+
+```text
 simple-storage-dapp/
-│
 ├── contracts/
-│   └── SimpleStorage.sol    # Smart contract for storing numbers
-├── index.html              # Frontend interface
-├── script.js              # Frontend logic and Web3 integration
-└── README.md              # This documentation
+├── index.html
+├── script.js
 ```
 
-## 🔗 Frontend-Smart Contract Connection
+## Getting Started
 
-### 1. Smart Contract (Backend)
-The `SimpleStorage.sol` contract provides two main functions:
-- `setNumber(uint256 _number)`: Stores a number on the blockchain
-- `getNumber()`: Retrieves the stored number
+```bash
+git clone https://github.com/Bannysukumar/simple-storage-dapp.git
+cd simple-storage-dapp
+```
 
-### 2. Frontend Components
+## Contributing
 
-#### HTML Interface (`index.html`)
-- Provides user interface elements:
-  - Input field for entering numbers
-  - "Set Number" button to store numbers
-  - "Get Stored Number" button to retrieve numbers
-  - Display area for showing the stored number
-
-#### JavaScript Integration (`script.js`)
-The frontend connects to the smart contract through several key components:
-
-1. **Web3.js Integration**
-   ```javascript
-   // Initialize Web3 with MetaMask provider
-   web3 = new Web3(window.ethereum);
-   ```
-
-2. **Contract Connection**
-   ```javascript
-   // Contract address and ABI
-   const contractAddress = "YOUR_DEPLOYED_CONTRACT_ADDRESS";
-   const contractABI = [...];  // Contract interface
-   
-   // Initialize contract instance
-   contract = new web3.eth.Contract(contractABI, contractAddress);
-   ```
-
-3. **MetaMask Integration**
-   - Checks for MetaMask installation
-   - Requests user account access
-   - Handles transaction signing
-
-## 🔄 Data Flow
-
-1. **Setting a Number**
-   ```javascript
-   // 1. User enters number in input field
-   // 2. Clicks "Set Number" button
-   // 3. Frontend calls contract method
-   await contract.methods.setNumber(number).send({ from: accounts[0] });
-   // 4. MetaMask prompts for transaction confirmation
-   // 5. Transaction is mined on blockchain
-   // 6. Success message shown to user
-   ```
-
-2. **Getting a Number**
-   ```javascript
-   // 1. User clicks "Get Stored Number" button
-   // 2. Frontend calls contract method
-   const result = await contract.methods.getNumber().call();
-   // 3. Result displayed on webpage
-   document.getElementById("result").innerText = "Stored number: " + result;
-   ```
-
-## 🚀 Setup Instructions
-
-1. **Deploy Smart Contract**
-   - Use Remix IDE to deploy `SimpleStorage.sol`
-   - Copy the deployed contract address
-   - Update `contractAddress` in `script.js`
-
-2. **Run Frontend**
-   - Ensure MetaMask is installed in your browser
-   - Open `index.html` in a web browser
-   - Connect MetaMask when prompted
-
-## 🔧 Technical Requirements
-
-- MetaMask browser extension
-- Web3.js library
-- Modern web browser
-- Ethereum network connection (testnet or mainnet)
-
-## 🔐 Security Considerations
-
-1. **MetaMask Security**
-   - Never share your private keys
-   - Always verify transaction details
-   - Use test networks for development
-
-2. **Contract Security**
-   - Smart contract is immutable once deployed
-   - Ensure thorough testing before deployment
-   - Consider gas costs for transactions
-
-## 📚 Additional Resources
-
-- [Web3.js Documentation](https://web3js.readthedocs.io/)
-- [MetaMask Documentation](https://docs.metamask.io/)
-- [Solidity Documentation](https://docs.soliditylang.org/)
-- [Ethereum Development Documentation](https://ethereum.org/developers/)
-
-## 🤝 Contributing
-
-Feel free to submit issues and enhancement requests!
-
-<!-- readme-seo: bannysukumar -->
-
-## Open source
-
-This repository is open source and maintained by [Banny Sukumar](https://github.com/Bannysukumar). Simple Storage dApp is published so other developers can study the code and contribute.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request.
 
 ## License
 
-Released under the [MIT License](LICENSE). Copyright (c) 2026 Banny Sukumar. See [CONTRIBUTING.md](CONTRIBUTING.md) if you want to help.
+Licensed under MIT. See [LICENSE](LICENSE).
+
+## Author
+
+[Banny Sukumar](https://github.com/Bannysukumar)
+
+- GitHub: [@Bannysukumar](https://github.com/Bannysukumar)
+- Portfolio: [adepu-sukumar.vercel.app](https://adepu-sukumar.vercel.app/)
+- LinkedIn: [Adepu Sukumar](https://www.linkedin.com/in/adepu-sukumar-59b423351)
